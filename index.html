@@ -18,9 +18,9 @@
 
                         <div class="containerSide headSide">
                             <div class="image">
-                                <img class="profilePhoto" src="img/avatar_2.jpg" alt="Foto Profilo Personale">
+                                <img class="profilePhoto" src="img/avatar_io.jpg" alt="Foto Profilo Personale">
                             </div>
-                            <span class="profileName">Fabio</span>
+                            <span class="profileName">Sofia</span>
                             <div class="icons">
                                 <i class="fa-solid fa-circle-notch"></i>
                                 <i class="fa-solid fa-message"></i>
@@ -47,51 +47,9 @@
                         </div>
 
                         <div class="chatList">
-                            <div class="containerSide">
+                            <div v-for="(contact, index) in contacts" class="containerSideSmaller">
                                 <div class="image">
-                                    <img class="profilePhoto" src="img/avatar_2.jpg" alt="Foto Profilo Personale">
-                                </div>
-                            </div>
-
-                            <div class="containerSide">
-                                <div class="image">
-                                    <img class="profilePhoto" src="img/avatar_2.jpg" alt="Foto Profilo Personale">
-                                </div>
-                            </div>
-
-                            <div class="containerSide">
-                                <div class="image">
-                                    <img class="profilePhoto" src="img/avatar_2.jpg" alt="Foto Profilo Personale">
-                                </div>
-                            </div>
-
-                            <div class="containerSide">
-                                <div class="image">
-                                    <img class="profilePhoto" src="img/avatar_2.jpg" alt="Foto Profilo Personale">
-                                </div>
-                            </div>
-
-                            <div class="containerSide">
-                                <div class="image">
-                                    <img class="profilePhoto" src="img/avatar_2.jpg" alt="Foto Profilo Personale">
-                                </div>
-                            </div>
-
-                            <div class="containerSide">
-                                <div class="image">
-                                    <img class="profilePhoto" src="img/avatar_2.jpg" alt="Foto Profilo Personale">
-                                </div>
-                            </div>
-
-                            <div class="containerSide">
-                                <div class="image">
-                                    <img class="profilePhoto" src="img/avatar_2.jpg" alt="Foto Profilo Personale">
-                                </div>
-                            </div>
-
-                            <div class="containerSide">
-                                <div class="image">
-                                    <img class="profilePhoto" src="img/avatar_2.jpg" alt="Foto Profilo Personale">
+                                    <img class="profilePhoto" :src="contacts[index].avatar" alt="Foto Profilo Amico">
                                 </div>
                             </div>
                         </div>
