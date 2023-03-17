@@ -148,3 +148,31 @@ body {
     top: 0;
     right: 0;
 }
+
+.content {
+    flex-grow: 1; 
+}
+
+.contentHeader {
+    padding: 10px;
+    display: flex;
+    background-color: lightgray;
+    height: 76px;
+    align-items: center;
+}
+
+.lastAccess {
+    color: gray;
+    padding-left: 10px;
+    font-size: 0.9rem;
+}
+
+.chatting {
+    
+    flex-grow: 1;
+}
+
+.chatSection {
+    background-image: url(../img/mine.jpg);
+    height: calc(100vh - 150px - (76px * 2));
+}
