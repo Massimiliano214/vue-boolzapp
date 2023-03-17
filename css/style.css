@@ -221,5 +221,14 @@ body {
 
 .otherMessage {
     background-color: white;
+    position: relative;
     width: 280px;
+}
+
+.messageTime {
+    color: gray;
+    font-size: 0.7rem;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
 }
