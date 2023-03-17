@@ -176,3 +176,26 @@ body {
     background-image: url(../img/mine.jpg);
     height: calc(100vh - 150px - (76px * 2));
 }
+
+.writerBox {
+    display: flex;
+    align-items: center;
+    height: 66px;
+    background-color: rgb(219, 194, 198);
+    padding: 15px;
+}
+
+.sendText {
+    flex-grow: 1;
+    border: 1px solid lightgray;
+    padding: 16px;
+    margin: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.writerBox i {
+    font-size: 1.4rem;
+    margin: 10px;
+    color: gray;
+}
