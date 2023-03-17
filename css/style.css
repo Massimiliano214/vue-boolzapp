@@ -175,6 +175,8 @@ body {
 .chatSection {
     background-image: url(../img/mine.jpg);
     height: calc(100vh - 150px - (76px * 2));
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .writerBox {
@@ -198,4 +200,26 @@ body {
     font-size: 1.4rem;
     margin: 10px;
     color: gray;
+}
+
+.containerMessages {
+    padding: 30px 40px;
+}
+
+.message {
+    padding: 20px;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.ownMessage {
+    position: relative;
+    left: 372px;
+    background-color: greenyellow;
+    width: 280px;
+}
+
+.otherMessage {
+    background-color: white;
+    width: 280px;
 }
