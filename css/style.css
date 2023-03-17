@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+ font-family: sans-serif;
+}
+
 .mainTop {
     background-color: rgb(81, 137, 137);
     height: 150px;
@@ -23,4 +27,70 @@
 .peolpleList {
     max-width: 40%;
     background-color: antiquewhite;
+    
+}
+
+.containerSide {
+    padding: 10px;
+    width: 400px;
+}
+
+.headSide {
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+}
+
+
+.profilePhoto {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profileName {
+    padding-left: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    flex-grow: 1
+    ;
+}
+
+.icons {
+    color: gray;
+    font-size: 1.3rem;
+}
+
+.icons i {
+    padding: 8px;
+}
+
+.notifyBlock {
+    display: flex;
+    background-color: skyblue;
+    padding: 15px 10px;
+    align-items: center;
+}
+
+.bigIcon {
+    font-size: 1.5rem;
+    background-color: white;
+    padding: 10px;
+    padding-top: 12px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    color: skyblue;
+}
+
+.textNotify {
+    padding-left: 10px;
+}
+
+.textNotify a {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.searchBar {
+    
 }
