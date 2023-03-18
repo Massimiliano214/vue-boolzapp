@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
       return {
+        chatSelezionata: 0,
         contacts: [
             {
             name: 'Michele',
@@ -167,5 +168,13 @@ createApp({
             }
             ]
       }
-    }
-  }).mount('#app')
+    },
+    methods: {
+      cambioChat(chatCliccata) {
+        this.chatSelezionata = chatCliccata;
+        
+      }
+        
+      }
+  },
+  ).mount('#app')

@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="chatList">
-                            <div v-for="(contact, index) in contacts" class="containerSideSmaller">
+                            <div v-for="(contact, index) in contacts" class="containerSideSmaller" @click="cambioChat(index)">
                                 <div class="image">
                                     <img class="profilePhoto" :src="contacts[index].avatar" alt="Foto Profilo Amico">
                                 </div>
@@ -81,22 +81,12 @@
 
                         <div class="chatSection">
                             <div class="containerMessages">
-                                <div class="message ownMessage">
-                                    Hai portato a spasso il cane?
-                                    <span class="messageTime">16:15</span>
-                                </div>
-                                <div class="message otherMessage">
-                                    Tutto fatto!
-                                    <span class="messageTime">16:15</span>
-                                </div>
-                                <div class="message ownMessage">
-                                    Hai portato a spasso il cane?
-                                    <span class="messageTime">16:15</span>
-                                </div>
-                                <div class="message ownMessage">
-                                    Hai portato a spasso il cane?
-                                    <span class="messageTime">16:15</span>
-                                </div>
+                                <div v-for="(contact, index1) in contacts">
+                                    <div v-for="(element, index) in contact.messages" class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'" v-if="(index1 == chatSelezionata)">
+                                        {{element.message}}
+                                        <span class="messageTime">16:15</span>
+                                    </div>
+                                </div>       
 
                             </div>
                             

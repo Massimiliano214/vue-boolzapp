@@ -206,7 +206,7 @@ body {
     padding: 30px 40px;
 }
 
-.message {
+.messageClassic {
     padding: 20px;
     border-radius: 15px;
     margin: 15px;
@@ -217,12 +217,14 @@ body {
     left: 372px;
     background-color: greenyellow;
     width: 280px;
+    
 }
 
 .otherMessage {
     background-color: white;
     position: relative;
     width: 280px;
+    
 }
 
 .messageTime {
