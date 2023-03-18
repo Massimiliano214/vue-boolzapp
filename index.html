@@ -63,21 +63,25 @@
                     </aside>
 
                     <div class="content">
-                        <div class="contentHeader">
-                            <div class="image">
-                                <img class="profilePhoto" src="img/avatar_1.jpg" alt="Foto Profilo Personale">
-                            </div>
-                            <div class="chatting">
-                                <h4 class="profileName">Michele</h4>
-                                <span class="lastAccess">Ultimo accesso oggi alle 12:00</span>
-                            </div>
+                        <div class="contentWrapper" v-for="(contact, index1) in contacts" >
+                            <div class="contentHeader" v-if="(index1 == chatSelezionata)">
                             
-                            <div class="icons">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <i class="fa-solid fa-paperclip"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </div>
+                                <div class="image">
+                                    <img class="profilePhoto" :src="contact.avatar" alt="Foto Profilo Amico">
+                                </div>
+                                <div class="chatting">
+                                    <h4 class="profileName">{{contact.name}}</h4>
+                                    <span class="lastAccess">Ultimo accesso oggi alle 12:00</span>
+                                </div>
+                                
+                                <div class="icons">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <i class="fa-solid fa-paperclip"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                            </div>  
                         </div>
+                        
 
                         <div class="chatSection">
                             <div class="containerMessages">
@@ -92,11 +96,26 @@
                             
                         </div>
 
-                        <div class="writerBox">
-                            <i class="fa-regular fa-face-smile"></i>
-                            <input class="sendText" type="text" placeholder="Scrivi un messaggio">
-                            <i class="fa-solid fa-microphone"></i>
+
+                        <div v-for="(contact, index1) in contacts">
+                            <div v-for="(element, index) in contact.messages"  v-if="(index1 == chatSelezionata)">
+                                
+                                <div class="writerBox" v-if="(index == 0)">
+
+                                    <i class="fa-regular fa-face-smile"></i>
+                                    <input class="sendText" type="text" placeholder="Scrivi un messaggio" v-model="creazioneMessaggio" @keyup.enter="sendText(contact.messages, index1)">
+                                    <i class="fa-solid fa-microphone"></i>
+        
+        
+                                    
+                                </div>
+
+                                
+
+
+                            </div>
                         </div>
+                        
                         
                     </div>
                 </div>

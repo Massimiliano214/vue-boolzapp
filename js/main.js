@@ -4,6 +4,7 @@ createApp({
     data() {
       return {
         chatSelezionata: 0,
+        creazioneMessaggio: "",
         contacts: [
             {
             name: 'Michele',
@@ -172,9 +173,43 @@ createApp({
     methods: {
       cambioChat(chatCliccata) {
         this.chatSelezionata = chatCliccata;
-        
-      }
-        
+      },
+      sendText(element, index) {
+          console.log(element);
+          element.push(
+            {
+              date: '10/01/2020 15:51:00',
+              message: this.creazioneMessaggio,
+              status: 'sent'
+            }
+          )
+          this.creazioneMessaggio = "";
+
+          setTimeout( function()
+          {
+            element.push(
+              {
+                date: '10/01/2020 15:51:00',
+                message: "ok",
+                status: 'received'
+              }
+            )
+          }, 1000)
+      },
       }
   },
   ).mount('#app')
+
+
+  /*
+   {
+            date: '10/01/2020 15:51:00',
+            message: this.creazioneMessaggio,
+            status: 'sent'
+          }
+
+
+          {
+              nuovoMessaggio: this.creazioneMessaggio
+            }
+          */
