@@ -5,6 +5,8 @@ createApp({
       return {
         chatSelezionata: 0,
         creazioneMessaggio: "",
+        ricercaUtente: "",
+        researchOpereator: true,
         contacts: [
             {
             name: 'Michele',
@@ -196,6 +198,21 @@ createApp({
             )
           }, 1000)
       },
+      differenceDetector(index, word) {
+        let testoRicercato = this.ricercaUtente.toLowerCase();
+        let lunghezzaTesto = testoRicercato.length;
+        let nomeIntero = this.contacts[index].name.toLowerCase();
+        if(testoRicercato != nomeIntero) {
+          this.researchOpereator = false;
+        } else if (testoRicercato == "") {
+          this.researchOpereator = true;
+        }
+        console.log(this.ricercaUtente);
+        console.log(nomeIntero);
+        console.log(this.researchOpereator);
+        console.log(word);
+        return this.researchOpereator
+      }
       }
   },
   ).mount('#app')

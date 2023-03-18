@@ -38,16 +38,24 @@
                             </div>
                             
                         </div>
+                        <div class="searchWrapper" v-for="(ciclo, index) in contacts">
+                            <div class="wordCounter" v-for="(word, index) in ciclo.name">
 
-                        <div class="searchBar">
-                            <div class="searchSector">
-                                <i class="searchIcon fa-solid fa-magnifying-glass"></i>
-                                <input class="searchText" type="text" placeholder="Cerca o inizia una nuova chat">
+                                <div class="searchBar">
+                                    <div class="searchSector" >
+                                        <i class="searchIcon fa-solid fa-magnifying-glass"></i>
+                                        <input class="searchText" type="text" placeholder="Cerca o inizia una nuova chat" v-model="ricercaUtente" @keyup="differenceDetector(index, word)">
+                                    </div>
+                                </div>
+
                             </div>
+                            
+
                         </div>
+                        
 
                         <div class="chatList">
-                            <div v-for="(contact, index) in contacts" class="containerSideSmaller" @click="cambioChat(index)">
+                            <div v-for="(contact, index) in contacts" class="containerSideSmaller" @click="cambioChat(index)" v-if="researchOpereator">
                                 <div class="image">
                                     <img class="profilePhoto" :src="contacts[index].avatar" alt="Foto Profilo Amico">
                                 </div>
