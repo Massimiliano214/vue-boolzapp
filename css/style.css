@@ -36,7 +36,18 @@ body {
 
 .peolpleList {
     max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    flex-grow: 1;
     
+}
+
+.chatList {
+    height: calc(100vh - 368px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 400px;
 }
 
 .containerSide {
@@ -132,12 +143,7 @@ body {
     font-weight: bold;
 }
 
-.chatList {
-    height: calc(100vh - 372px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-width: 400px;
-}
+
 
 .stats {
     padding-left: 10px;

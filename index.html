@@ -49,7 +49,7 @@
 
                         <div class="chatList">
                             <div v-for="(contact, index) in contacts">
-                                <div  class="containerSideSmaller" @click="cambioChat(index), backgroundHover(contact)" @mouseover="backgroundHover(contact)"  @mouseleave="backgroundEnd(contact)" :class="(hoverOperator)?'bg_c':''" v-if="contact.visible">
+                                <div  class="containerSideSmaller" @click="cambioChat(index), backgroundHover(index)" @mouseover="backgroundHover(index)"  @mouseleave="backgroundEnd(index)" :class="(hoverOperator)?'bg_c':''" v-if="contact.visible">
                                     <div class="image">
                                         <img class="profilePhoto" :src="contacts[index].avatar" alt="Foto Profilo Amico">
                                     </div>

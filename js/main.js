@@ -201,7 +201,7 @@ createApp({
       },
       differenceDetector(index, word) {
         let testoRicercato = this.ricercaUtente.toLowerCase();
-        this.contacts.forEach((element, index) => {
+        this.contacts.forEach((element) => {
           let daVerificare = element.name.toLowerCase();
           console.log(testoRicercato);
           console.log(element.name);
@@ -215,15 +215,15 @@ createApp({
         });
       },
       
-      backgroundHover(contact, index) {
-        //this.hoverOperator = true;
-        //console.log(contact);
-        //return this.hoverOperator;
+      backgroundHover(index) {
+        console.log(index);
+        let test = document.querySelector(".containerSideSmaller");
+        test.classList.add("bg_c");
       },
-      backgroundEnd(contact, index) {
-        //this.hoverOperator = false;
-        //console.log(contact);
-        //return this.hoverOperator;
+      backgroundEnd(index) {
+        console.log(index);
+        let test = document.querySelector(".containerSideSmaller");
+        test.classList.remove("bg_c");
       }
       }
   },
