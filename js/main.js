@@ -215,16 +215,6 @@ createApp({
         });
       },
       
-      backgroundHover(index) {
-        console.log(index);
-        let test = document.querySelector(".containerSideSmaller");
-        test.classList.add("bg_c");
-      },
-      backgroundEnd(index) {
-        console.log(index);
-        let test = document.querySelector(".containerSideSmaller");
-        test.classList.remove("bg_c");
-      }
       }
   },
   ).mount('#app')

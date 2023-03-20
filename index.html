@@ -11,120 +11,119 @@
 <body>
     <div id="app">
         <main>
-            <div class="mainTop"></div>
-            <div class="mainBottom">
-                <div class="container">
-                    <aside class="peopleList">
+            
+            <div class="container">
+                <aside class="peopleList">
 
-                        <div class="containerSide headSide">
-                            <div class="image">
-                                <img class="profilePhoto" src="img/avatar_io.jpg" alt="Foto Profilo Personale">
-                            </div>
-                            <span class="profileName">Sofia</span>
-                            <div class="icons">
-                                <i class="fa-solid fa-circle-notch"></i>
-                                <i class="fa-solid fa-message"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </div>
+                    <div class="containerSide headSide">
+                        <div class="image">
+                            <img class="profilePhoto" src="img/avatar_io.jpg" alt="Foto Profilo Personale">
                         </div>
-
-                        <div class="containerSide notifyBlock">
-                            <div class="image">
-                                <i class="bigIcon fa-regular fa-bell-slash"></i>
-                            </div>
-                            <div class="textNotify">
-                                <h5>Ricevi notifiche di nuovi messaggi</h5>
-                                <a href="#">Attiva notifiche desktop</a>
-                            </div>
-                            
+                        <span class="profileName">Sofia</span>
+                        <div class="icons">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
-                        
-                        <div class="searchBar">
-                            <div class="searchSector" >
-                                <i class="searchIcon fa-solid fa-magnifying-glass"></i>
-                                <input class="searchText" type="text" placeholder="Cerca o inizia una nuova chat" v-model="ricercaUtente" @keyup="differenceDetector()">
-                            </div>
+                    </div>
+
+                    <div class="containerSide notifyBlock">
+                        <div class="image">
+                            <i class="bigIcon fa-regular fa-bell-slash"></i>
                         </div>
-                        
-
-                        <div class="chatList">
-                            <div v-for="(contact, index) in contacts">
-                                <div  class="containerSideSmaller" @click="cambioChat(index), backgroundHover(index)" @mouseover="backgroundHover(index)"  @mouseleave="backgroundEnd(index)" :class="(hoverOperator)?'bg_c':''" v-if="contact.visible">
-                                    <div class="image">
-                                        <img class="profilePhoto" :src="contacts[index].avatar" alt="Foto Profilo Amico">
-                                    </div>
-                                    
-                                    <div class="stats">
-                                        <h4 class="chatterName">{{contacts[index].name}}</h4>
-                                        <span class="lastMessage">ultimo messaggio inviato</span>
-                                        <span class="hoursMessage">12:00</span>
-                                    </div>
-                                </div>
-                                
-                            </div>
+                        <div class="textNotify">
+                            <h5>Ricevi notifiche di nuovi messaggi</h5>
+                            <a href="#">Attiva notifiche desktop</a>
                         </div>
-
-                    </aside>
-
-                    <div class="content">
-                        <div class="contentWrapper" v-for="(contact, index1) in contacts" >
-                            <div class="contentHeader" v-if="(index1 == chatSelezionata)">
-                            
-                                <div class="image">
-                                    <img class="profilePhoto" :src="contact.avatar" alt="Foto Profilo Amico">
-                                </div>
-                                <div class="chatting">
-                                    <h4 class="profileName">{{contact.name}}</h4>
-                                    <span class="lastAccess">Ultimo accesso oggi alle 12:00</span>
-                                </div>
-                                
-                                <div class="icons">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                    <i class="fa-solid fa-paperclip"></i>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                                </div>
-                            </div>  
-                        </div>
-                        
-
-                        <div class="chatSection">
-                            <div class="chatMargin" >
-                                <div v-for="(contact, index1) in contacts" class="containerMessages">
-                                    <div v-for="(element, index) in contact.messages" class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'" v-if="(index1 == chatSelezionata)">
-                                        {{element.message}}
-                                        <span class="messageTime">16:15</span>
-                                    </div>
-                                </div>       
-
-                            </div>
-                            
-                        </div>
-
-
-                        <div v-for="(contact, index1) in contacts">
-                            <div v-for="(element, index) in contact.messages"  v-if="(index1 == chatSelezionata)">
-                                
-                                <div class="writerBox" v-if="(index == 0)">
-
-                                    <i class="fa-regular fa-face-smile"></i>
-                                    <input class="sendText" type="text" placeholder="Scrivi un messaggio" v-model="creazioneMessaggio" @keyup.enter="sendText(contact.messages, index1)">
-                                    <i class="fa-solid fa-microphone"></i>
-        
-        
-                                    
-                                </div>
-
-                                
-
-
-                            </div>
-                        </div>
-                        
                         
                     </div>
+                    
+                    <div class="searchBar">
+                        <div class="searchSector" >
+                            <i class="searchIcon fa-solid fa-magnifying-glass"></i>
+                            <input class="searchText" type="text" placeholder="Cerca o inizia una nuova chat" v-model="ricercaUtente" @keyup="differenceDetector()">
+                        </div>
+                    </div>
+                    
+
+                    <div class="chatList">
+                        <div v-for="(contact, index) in contacts">
+                            <div  class="containerSideSmaller" @click="cambioChat(index)" v-if="contact.visible">
+                                <div class="image">
+                                    <img class="profilePhoto" :src="contacts[index].avatar" alt="Foto Profilo Amico">
+                                </div>
+                                
+                                <div class="stats">
+                                    <h4 class="chatterName">{{contacts[index].name}}</h4>
+                                    <span class="lastMessage">ultimo messaggio inviato</span>
+                                    <span class="hoursMessage">12:00</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </aside>
+
+                <div class="content">
+                    <div class="contentWrapper" v-for="(contact, index1) in contacts" >
+                        <div class="contentHeader" v-if="(index1 == chatSelezionata)">
+                        
+                            <div class="image">
+                                <img class="profilePhoto" :src="contact.avatar" alt="Foto Profilo Amico">
+                            </div>
+                            <div class="chatting">
+                                <h4 class="profileName">{{contact.name}}</h4>
+                                <span class="lastAccess">Ultimo accesso oggi alle 12:00</span>
+                            </div>
+                            
+                            <div class="icons">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>  
+                    </div>
+                    
+
+                    <div class="chatSection">
+                        <div class="chatMargin" >
+                            <div v-for="(contact, index1) in contacts" class="containerMessages">
+                                <div v-for="(element, index) in contact.messages" class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'" v-if="(index1 == chatSelezionata)">
+                                    {{element.message}}
+                                    <span class="messageTime">16:15</span>
+                                </div>
+                            </div>       
+
+                        </div>
+                        
+                    </div>
+
+
+                    <div v-for="(contact, index1) in contacts" class="content3rd">
+                        <div v-for="(element, index) in contact.messages"  v-if="(index1 == chatSelezionata)">
+                            
+                            <div class="writerBox" v-if="(index == 0)">
+
+                                <i class="fa-regular fa-face-smile"></i>
+                                <input class="sendText" type="text" placeholder="Scrivi un messaggio" v-model="creazioneMessaggio" @keyup.enter="sendText(contact.messages, index1)">
+                                <i class="fa-solid fa-microphone"></i>
+    
+    
+                                
+                            </div>
+
+                            
+
+
+                        </div>
+                    </div>
+                    
+                    
                 </div>
-                
             </div>
+                
+            
         </main>
     </div>
     

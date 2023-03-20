@@ -12,47 +12,45 @@
     --writing-section: #ffe9e975;
     --my-msg: rgb(209, 250, 190);
     --white: white;
-    --main-background: rgb(0, 150, 136);
+    --main-background: #1D9688;
 }
 
 body {
  font-family: sans-serif;
+ background: linear-gradient(to bottom, #1D9688 20%, #D9DBD3 20% 100%);
+ height: 100vh;
 }
 
-.mainTop {
-    background-color: var(--main-background);
-    height: 150px;
+main {
+    display: flex;
+    height: 100vh;
     width: 100%;
+    
 }
 
 .container {
+    
     display: flex;
-    height: calc(100vh - 150px);
+    height: 90vh;
     width: 1170px;
     margin: auto;
-    position: relative;
-    top: -90px;
+    
 }
 
 .peolpleList {
     max-width: 40%;
     display: flex;
     flex-direction: column;
-    background-color: red;
     flex-grow: 1;
     
 }
 
-.chatList {
-    height: calc(100vh - 368px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-width: 400px;
-}
+
 
 .containerSide {
     padding: 10px;
     width: 400px;
+    height: 76px;
     
 }
 
@@ -61,7 +59,13 @@ body {
     display: flex;
     max-width: 400px;
     border: 1px solid var(--header-message);
+    background-color: white;
 }
+
+.containerSideSmaller:hover {
+    background-color: var(--lighter-gray-search-bar);
+}
+
 .headSide {
     background-color: var(--header-message);
     display: flex;
@@ -122,12 +126,12 @@ body {
 .searchBar {
     padding: 10px;
     background-color: var(--lighter-gray-search-bar);
+    height: 53px;
 }
 
 .searchSector {
     display: flex;
-    background-color: var(--white);
-    
+    background-color: var(--white);    
 }
 
 .searchIcon {
@@ -144,6 +148,16 @@ body {
 }
 
 
+.chatList {
+    display: flex;
+    flex-direction: column;
+    
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(90vh - (213px));
+    background-color: white;
+}
 
 .stats {
     padding-left: 10px;
@@ -166,7 +180,14 @@ body {
 }
 
 .content {
-    flex-grow: 1; 
+    height: 100%;
+    width: 90vh;
+}
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 90vh;
 }
 
 .contentHeader {
@@ -190,9 +211,9 @@ body {
 
 .chatSection {
     background-image: url(../img/mine.jpg);
-    height: calc(100vh - 150px - (76px * 2));
     overflow-y: auto;
     overflow-x: hidden;
+    height: calc(90vh - (150px)); 
 }
 
 .writerBox {
@@ -263,6 +284,6 @@ body {
     bottom: 10px;
 }
 
-.bg_c {
-    background-color: var(--lighter-gray-search-bar);
+#grayColor {
+    background-color: var(--icon-colors);
 }
