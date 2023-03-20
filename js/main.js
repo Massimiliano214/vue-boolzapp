@@ -12,6 +12,7 @@ createApp({
             name: 'Michele',
             avatar: './img/avatar_1.jpg',
             visible: true,
+            clickButton: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -34,6 +35,7 @@ createApp({
             name: 'Fabio',
             avatar: "./img/avatar_2.jpg",
             visible: true,
+            clickButton: false,
             messages: [
             {
             date: '20/03/2020 16:30:00',
@@ -56,6 +58,7 @@ createApp({
             name: 'Samuele',
             avatar: "./img/avatar_3.jpg",
             visible: true,
+            clickButton: false,
             messages: [
             {
             date: '28/03/2020 10:10:40',
@@ -78,6 +81,7 @@ createApp({
             name: 'Alessandro B.',
             avatar: "./img/avatar_4.jpg",
             visible: true,
+            clickButton: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -95,6 +99,7 @@ createApp({
             name: 'Alessandro L.',
             avatar: "./img/avatar_5.jpg",
             visible: true,
+            clickButton: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -112,6 +117,7 @@ createApp({
             name: 'Claudia',
             avatar: "./img/avatar_5.jpg",
             visible: true,
+            clickButton: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -134,6 +140,7 @@ createApp({
             name: 'Federico',
             avatar: "./img/avatar_7.jpg",
             visible: true,
+            clickButton: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -151,6 +158,7 @@ createApp({
             name: 'Davide',
             avatar: "./img/avatar_8.jpg",
             visible: true,
+            clickButton: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -174,7 +182,24 @@ createApp({
     },
     methods: {
       cambioChat(chatCliccata) {
+        
         this.chatSelezionata = chatCliccata;
+        this.contacts.forEach((element, index) => {
+          
+          let caso = this.contacts[chatCliccata].clickButton = true;
+          console.log(caso);
+          if (caso != false) {
+            console.log(caso);
+            console.log(chatCliccata);
+            caso = false;
+          }
+          console.log(caso);
+          return caso;
+          //element.clickButton = true;
+        }
+        );
+        
+        
         // clickColor
       },
       sendText(element, index) {
@@ -218,17 +243,3 @@ createApp({
       }
   },
   ).mount('#app')
-
-
-  /*
-   {
-            date: '10/01/2020 15:51:00',
-            message: this.creazioneMessaggio,
-            status: 'sent'
-          }
-
-
-          {
-              nuovoMessaggio: this.creazioneMessaggio
-            }
-          */

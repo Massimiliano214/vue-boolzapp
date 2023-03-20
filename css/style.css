@@ -180,14 +180,14 @@ main {
 }
 
 .content {
-    height: 100%;
-    width: 90vh;
+    height: 90vh;
+    width: 100%;
 }
 
 .contentWrapper {
     display: flex;
     flex-direction: column;
-    flex-grow: 90vh;
+    flex-grow: 1;
 }
 
 .contentHeader {
@@ -284,6 +284,10 @@ main {
     bottom: 10px;
 }
 
-#grayColor {
-    background-color: var(--icon-colors);
+.grayColor {
+    background-color: gainsboro;
+}
+
+.whiteColor {
+    background-color: white;
 }

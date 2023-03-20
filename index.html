@@ -48,7 +48,7 @@
 
                     <div class="chatList">
                         <div v-for="(contact, index) in contacts">
-                            <div  class="containerSideSmaller" @click="cambioChat(index)" v-if="contact.visible">
+                            <div  class="containerSideSmaller" @click="cambioChat(index)" :class="contacts[index].clickButton?'grayColor':'whiteColor'" v-if="contact.visible">
                                 <div class="image">
                                     <img class="profilePhoto" :src="contacts[index].avatar" alt="Foto Profilo Amico">
                                 </div>
