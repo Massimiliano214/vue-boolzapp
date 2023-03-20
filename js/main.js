@@ -223,6 +223,9 @@ createApp({
           return element.visible;
         });
       },
+      addRemove() {
+        
+      }
       
       }
   },

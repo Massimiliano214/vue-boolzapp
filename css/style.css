@@ -303,14 +303,23 @@ main {
 
 .window {
     position: absolute;
-    right: 15px;
-    top: 80%;
-    display: block;
+    right: 10px;
+    top: 70%;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
 }
 
 .messageClassic:hover .alingText {
     display: block;
     z-index: 3;
+}
+
+.messageClassic:hover .window {
+    z-index: 4;
+    display: flex;
 }
 
 .window {

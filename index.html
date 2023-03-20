@@ -89,7 +89,7 @@
                     <div class="chatSection">
                         <div class="chatMargin" >
                             <div v-for="(contact, index1) in contacts" class="containerMessages">
-                                <div v-for="(element, index) in contact.messages" class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'" v-if="(index1 == chatSelezionata)">
+                                <div v-for="(element, index) in contact.messages" class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'" v-if="(index1 == chatSelezionata)" @click="addRemove">
                                     {{element.message}}
                                     <i class="alingText fa-solid fa-chevron-down"></i>
 
