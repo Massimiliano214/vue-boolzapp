@@ -213,10 +213,14 @@ body {
     color: var(--icon-colors);
 }
 
-.containerMessages {
+.chatMargin {
     padding: 30px 40px;
+}
+
+.containerMessages {
     display: flex;
     flex-direction: column;
+    
 }
 
 .messageClassic {
