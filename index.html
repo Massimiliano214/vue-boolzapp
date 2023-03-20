@@ -39,9 +39,9 @@
                             
                         </div>
                         <div class="searchWrapper" v-for="(ciclo, index) in contacts">
-                            <div class="wordCounter" v-for="(word, index) in ciclo.name">
+                            <div class="wordCounter" v-for="(word, index1) in ciclo.name">
 
-                                <div class="searchBar">
+                                <div class="searchBar" v-if="(index1 == 0)">
                                     <div class="searchSector" >
                                         <i class="searchIcon fa-solid fa-magnifying-glass"></i>
                                         <input class="searchText" type="text" placeholder="Cerca o inizia una nuova chat" v-model="ricercaUtente" @keyup="differenceDetector(index, word)">
@@ -55,16 +55,19 @@
                         
 
                         <div class="chatList">
-                            <div v-for="(contact, index) in contacts" class="containerSideSmaller" @click="cambioChat(index)" v-if="researchOpereator">
-                                <div class="image">
-                                    <img class="profilePhoto" :src="contacts[index].avatar" alt="Foto Profilo Amico">
+                            <div v-for="(contact, index) in contacts">
+                                <div  class="containerSideSmaller" @click="cambioChat(index), backgroundHover(contact)" @mouseover="backgroundHover(contact)"  @mouseleave="backgroundEnd(contact)" :class="(hoverOperator)?'bg_c':''">
+                                    <div class="image">
+                                        <img class="profilePhoto" :src="contacts[index].avatar" alt="Foto Profilo Amico">
+                                    </div>
+                                    
+                                    <div class="stats">
+                                        <h4 class="chatterName">{{contacts[index].name}}</h4>
+                                        <span class="lastMessage">ultimo messaggio inviato</span>
+                                        <span class="hoursMessage">12:00</span>
+                                    </div>
                                 </div>
                                 
-                                <div class="stats">
-                                    <h4 class="chatterName">{{contacts[index].name}}</h4>
-                                    <span class="lastMessage">ultimo messaggio inviato</span>
-                                    <span class="hoursMessage">12:00</span>
-                                </div>
                             </div>
                         </div>
 
@@ -92,8 +95,8 @@
                         
 
                         <div class="chatSection">
-                            <div class="containerMessages">
-                                <div v-for="(contact, index1) in contacts">
+                            <div >
+                                <div v-for="(contact, index1) in contacts" class="containerMessages">
                                     <div v-for="(element, index) in contact.messages" class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'" v-if="(index1 == chatSelezionata)">
                                         {{element.message}}
                                         <span class="messageTime">16:15</span>

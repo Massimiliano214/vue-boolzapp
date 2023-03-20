@@ -6,12 +6,13 @@ createApp({
         chatSelezionata: 0,
         creazioneMessaggio: "",
         ricercaUtente: "",
-        researchOpereator: true,
+        clickColor: true,
         contacts: [
             {
             name: 'Michele',
             avatar: './img/avatar_1.jpg',
             visible: true,
+            hoverOperator: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -34,6 +35,7 @@ createApp({
             name: 'Fabio',
             avatar: "./img/avatar_2.jpg",
             visible: true,
+            hoverOperator: false,
             messages: [
             {
             date: '20/03/2020 16:30:00',
@@ -56,6 +58,7 @@ createApp({
             name: 'Samuele',
             avatar: "./img/avatar_3.jpg",
             visible: true,
+            hoverOperator: false,
             messages: [
             {
             date: '28/03/2020 10:10:40',
@@ -78,6 +81,7 @@ createApp({
             name: 'Alessandro B.',
             avatar: "./img/avatar_4.jpg",
             visible: true,
+            hoverOperator: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -95,6 +99,7 @@ createApp({
             name: 'Alessandro L.',
             avatar: "./img/avatar_5.jpg",
             visible: true,
+            hoverOperator: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -112,6 +117,7 @@ createApp({
             name: 'Claudia',
             avatar: "./img/avatar_5.jpg",
             visible: true,
+            hoverOperator: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -134,6 +140,7 @@ createApp({
             name: 'Federico',
             avatar: "./img/avatar_7.jpg",
             visible: true,
+            hoverOperator: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -151,6 +158,7 @@ createApp({
             name: 'Davide',
             avatar: "./img/avatar_8.jpg",
             visible: true,
+            hoverOperator: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -175,6 +183,7 @@ createApp({
     methods: {
       cambioChat(chatCliccata) {
         this.chatSelezionata = chatCliccata;
+        // clickColor
       },
       sendText(element, index) {
           console.log(element);
@@ -203,15 +212,25 @@ createApp({
         let lunghezzaTesto = testoRicercato.length;
         let nomeIntero = this.contacts[index].name.toLowerCase();
         if(testoRicercato != nomeIntero) {
-          this.researchOpereator = false;
+          this.contacts[index].visible = false;
         } else if (testoRicercato == "") {
-          this.researchOpereator = true;
+          this.contacts[index].visible = true;
         }
         console.log(this.ricercaUtente);
         console.log(nomeIntero);
-        console.log(this.researchOpereator);
+        console.log(this.contacts[index].visible);
         console.log(word);
-        return this.researchOpereator
+        return this.contacts[index].visible
+      },
+      backgroundHover(contact, index) {
+        this.hoverOperator = true;
+        console.log(contact);
+        return this.hoverOperator;
+      },
+      backgroundEnd(contact, index) {
+        this.hoverOperator = false;
+        console.log(contact);
+        return this.hoverOperator;
       }
       }
   },

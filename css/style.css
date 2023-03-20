@@ -4,19 +4,29 @@
     box-sizing: border-box;
 }
 
+:root {
+    --header-message: lightgray;
+    --icon-colors: gray;
+    --notify-sector: skyblue;
+    --lighter-gray-search-bar: rgb(239, 242, 234);
+    --writing-section: #ffe9e975;
+    --my-msg: rgb(209, 250, 190);
+    --white: white;
+    --main-background: rgb(0, 150, 136);
+}
+
 body {
  font-family: sans-serif;
 }
 
 .mainTop {
-    background-color: rgb(81, 137, 137);
+    background-color: var(--main-background);
     height: 150px;
     width: 100%;
 }
 
 .container {
     display: flex;
-    border: 5px solid black;
     height: calc(100vh - 150px);
     width: 1170px;
     margin: auto;
@@ -26,26 +36,26 @@ body {
 
 .peolpleList {
     max-width: 40%;
-    background-color: antiquewhite;
     
 }
 
 .containerSide {
     padding: 10px;
     width: 400px;
-    border: 1px solid lightgray;
+    
 }
 
 .containerSideSmaller {
     padding: 10px;
     display: flex;
     max-width: 400px;
-    border: 1px solid lightgray;
+    border: 1px solid var(--header-message);
 }
 .headSide {
-    background-color: lightgray;
+    background-color: var(--header-message);
     display: flex;
     align-items: center;
+    border-right: 1px solid var(--icon-colors);
 }
 
 
@@ -63,7 +73,7 @@ body {
 }
 
 .icons {
-    color: gray;
+    color: var(--icon-colors);
     font-size: 1.3rem;
 }
 
@@ -73,20 +83,20 @@ body {
 
 .notifyBlock {
     display: flex;
-    background-color: skyblue;
+    background-color: var(--notify-sector);
     padding: 15px 10px;
     align-items: center;
 }
 
 .bigIcon {
     font-size: 1.5rem;
-    background-color: white;
+    background-color: var(--white);
     padding: 10px;
     padding-top: 12px;
     border-radius: 50%;
     height: 50px;
     width: 50px;
-    color: skyblue;
+    color: var(--notify-sector);
 }
 
 .textNotify {
@@ -95,29 +105,29 @@ body {
 
 .textNotify a {
     font-size: 0.9rem;
-    color: gray;
+    color: var(--icon-colors);
 }
 
 .searchBar {
     padding: 10px;
-    background-color: rgb(239, 242, 234);
+    background-color: var(--lighter-gray-search-bar);
 }
 
 .searchSector {
     display: flex;
-    background-color: white;
+    background-color: var(--white);
     
 }
 
 .searchIcon {
     padding: 8px 20px;
-    border: solid 1px lightgray;
-    color: gray;
+    border: solid 1px var(--header-message);
+    color: var(--icon-colors);
 }
 
 .searchText {
     flex-grow: 1;
-    border: 1px solid lightgray;
+    border: 1px solid var(--header-message);
     padding-left: 5px;
     font-weight: bold;
 }
@@ -138,12 +148,12 @@ body {
 
 .lastMessage {
     font-size: 0.8rem;
-    color: gray;
+    color: var(--icon-colors);
 }
 
 .hoursMessage {
     font-size: 0.8rem;
-    color: gray;
+    color: var(--icon-colors);
     position: absolute;
     top: 0;
     right: 0;
@@ -156,13 +166,13 @@ body {
 .contentHeader {
     padding: 10px;
     display: flex;
-    background-color: lightgray;
+    background-color: var(--header-message);
     height: 76px;
     align-items: center;
 }
 
 .lastAccess {
-    color: gray;
+    color: var(--icon-colors);
     padding-left: 10px;
     font-size: 0.9rem;
 }
@@ -183,13 +193,14 @@ body {
     display: flex;
     align-items: center;
     height: 66px;
-    background-color: rgb(219, 194, 198);
+    background-color: var(--writing-section);
     padding: 15px;
+    border-left: 1px solid var(--icon-colors);
 }
 
 .sendText {
     flex-grow: 1;
-    border: 1px solid lightgray;
+    border: 1px solid var(--header-message);
     padding: 16px;
     margin: 10px;
     border-radius: 20px;
@@ -199,38 +210,49 @@ body {
 .writerBox i {
     font-size: 1.4rem;
     margin: 10px;
-    color: gray;
+    color: var(--icon-colors);
 }
 
 .containerMessages {
     padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
 }
 
 .messageClassic {
     padding: 20px;
     border-radius: 15px;
     margin: 15px;
+    max-width: 80%;
+    min-width: 200px;
 }
 
 .ownMessage {
+    align-self: flex-end;
+    flex-wrap: wrap;
+    background-color: var(--my-msg);
     position: relative;
-    left: 372px;
-    background-color: greenyellow;
-    width: 280px;
+    
     
 }
 
 .otherMessage {
-    background-color: white;
+    background-color: var(--white);
     position: relative;
-    width: 280px;
+    align-self: flex-start;
+    flex-wrap: wrap;
+    position: relative;
     
 }
 
 .messageTime {
-    color: gray;
+    color: var(--icon-colors);
     font-size: 0.7rem;
     position: absolute;
     right: 10px;
     bottom: 10px;
+}
+
+.bg_c {
+    background-color: var(--lighter-gray-search-bar);
 }
