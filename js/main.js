@@ -184,23 +184,7 @@ createApp({
       cambioChat(chatCliccata) {
         
         this.chatSelezionata = chatCliccata;
-        this.contacts.forEach((element, index) => {
-          
-          let caso = this.contacts[chatCliccata].clickButton = true;
-          console.log(caso);
-          if (caso != false) {
-            console.log(caso);
-            console.log(chatCliccata);
-            caso = false;
-          }
-          console.log(caso);
-          return caso;
-          //element.clickButton = true;
-        }
-        );
         
-        
-        // clickColor
       },
       sendText(element, index) {
           console.log(element);

@@ -252,6 +252,7 @@ main {
 
 .messageClassic {
     padding: 20px;
+    padding-right: 30px;
     border-radius: 15px;
     margin: 15px;
     max-width: 80%;
@@ -288,6 +289,33 @@ main {
     background-color: gainsboro;
 }
 
-.whiteColor {
+.alingText {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate(50%,-50%);
+    display: none;
+}
+
+.d-none {
+    display: none;
+}
+
+.window {
+    position: absolute;
+    right: 15px;
+    top: 80%;
+    display: block;
+}
+
+.messageClassic:hover .alingText {
+    display: block;
+    z-index: 3;
+}
+
+.window {
     background-color: white;
+    padding: 10px;
+    border: 1px gray solid;
+    text-decoration: none;
 }

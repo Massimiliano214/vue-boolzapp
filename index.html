@@ -48,7 +48,7 @@
 
                     <div class="chatList">
                         <div v-for="(contact, index) in contacts">
-                            <div  class="containerSideSmaller" @click="cambioChat(index)" :class="contacts[index].clickButton?'grayColor':'whiteColor'" v-if="contact.visible">
+                            <div  class="containerSideSmaller" @click="cambioChat(index)" :class="index == chatSelezionata?'grayColor':''" v-if="contact.visible">
                                 <div class="image">
                                     <img class="profilePhoto" :src="contacts[index].avatar" alt="Foto Profilo Amico">
                                 </div>
@@ -91,7 +91,16 @@
                             <div v-for="(contact, index1) in contacts" class="containerMessages">
                                 <div v-for="(element, index) in contact.messages" class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'" v-if="(index1 == chatSelezionata)">
                                     {{element.message}}
+                                    <i class="alingText fa-solid fa-chevron-down"></i>
+
+                                    <div class="window d-none">
+                                        <span>Message info</span> </br>
+                                        <span>Deleate message</span>
+                                    </div>
+                                    
                                     <span class="messageTime">16:15</span>
+
+                                    
                                 </div>
                             </div>       
 
