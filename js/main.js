@@ -227,8 +227,8 @@ createApp({
 
         
       },
-      sendText(element, index) {
-        
+      sendText(element, index, placeholder) {
+        if (this.creazioneMessaggio != "") {
           element.push(
             {
               date: DateTime.now().setLocale("it").toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
@@ -248,6 +248,10 @@ createApp({
               }
             )
           }, 1000)
+        } else {
+          placeholder= "Scrivi almeno un carattere";
+        }
+          
       },
       differenceDetector(index, word) {
         let testoRicercato = this.ricercaUtente.toLowerCase();
