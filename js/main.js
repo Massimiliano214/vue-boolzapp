@@ -226,6 +226,8 @@ createApp({
         
         this.chatSelezionata = chatCliccata;
 
+        this.creazioneMessaggio = "";
+
         
       },
       sendText(element, index, placeholder) {
@@ -250,6 +252,7 @@ createApp({
             )
           }, 1000)
         } else {
+          this.creazioneMessaggio = "";
           this.placeHolderMessage = "Scrivi almeno un carattere";
           setTimeout(() => {
             this.placeHolderMessage = "Scrivi un messaggio";
