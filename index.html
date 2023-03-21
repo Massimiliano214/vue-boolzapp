@@ -17,9 +17,9 @@
 
                     <div class="containerSide headSide">
                         <div class="image">
-                            <img class="profilePhoto" src="img/avatar_io.jpg" alt="Foto Profilo Personale">
+                            <img class="profilePhoto" :src="user.avatar" alt="Foto Profilo Personale">
                         </div>
-                        <span class="profileName">Sofia</span>
+                        <span class="profileName">{{user.name}}</span>
                         <div class="icons">
                             <i class="fa-solid fa-circle-notch"></i>
                             <i class="fa-solid fa-message"></i>
@@ -55,7 +55,8 @@
                                 
                                 <div class="stats">
                                     <h4 class="chatterName">{{contacts[index].name}}</h4>
-                                    <span class="lastMessage">ultimo messaggio inviato</span>
+                                    <span class="lastMessage" v-for="(element, index2) in contact.messages">
+                                        <span v-if="index2 == element.message.length -1" >{{element.message}}</span></span>
                                     <span class="hoursMessage">12:00</span>
                                 </div>
                             </div>
@@ -89,7 +90,7 @@
                     <div class="chatSection">
                         <div class="chatMargin" >
                             <div v-for="(contact, index1) in contacts" class="containerMessages">
-                                <div v-for="(element, index) in contact.messages" class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'" v-if="(index1 == chatSelezionata)" @click="addRemove">
+                                <div v-for="(element, index) in contact.messages" class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'" v-if="(index1 == chatSelezionata)" @click="addRemove(contact, element,index1, index) ">
                                     {{element.message}}
                                     <i class="alingText fa-solid fa-chevron-down"></i>
 
@@ -98,7 +99,7 @@
                                         <span>Deleate message</span>
                                     </div>
                                     
-                                    <span class="messageTime">16:15</span>
+                                    <span class="messageTime">{{getOnlyTime(element.date)}}</span>
 
                                     
                                 </div>
@@ -143,7 +144,7 @@
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>

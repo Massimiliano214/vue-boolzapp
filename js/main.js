@@ -1,4 +1,5 @@
 const { createApp } = Vue
+const DateTime = luxon.DateTime;
 
 createApp({
     data() {
@@ -6,13 +7,16 @@ createApp({
         chatSelezionata: 0,
         creazioneMessaggio: "",
         ricercaUtente: "",
-        clickColor: true,
+        clickWindow: true,
+        user: {
+          name: "Sofia",
+          avatar: "./img/avatar_io.jpg"
+        },
         contacts: [
             {
             name: 'Michele',
             avatar: './img/avatar_1.jpg',
             visible: true,
-            clickButton: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -35,7 +39,6 @@ createApp({
             name: 'Fabio',
             avatar: "./img/avatar_2.jpg",
             visible: true,
-            clickButton: false,
             messages: [
             {
             date: '20/03/2020 16:30:00',
@@ -58,7 +61,6 @@ createApp({
             name: 'Samuele',
             avatar: "./img/avatar_3.jpg",
             visible: true,
-            clickButton: false,
             messages: [
             {
             date: '28/03/2020 10:10:40',
@@ -81,7 +83,6 @@ createApp({
             name: 'Alessandro B.',
             avatar: "./img/avatar_4.jpg",
             visible: true,
-            clickButton: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -99,7 +100,6 @@ createApp({
             name: 'Alessandro L.',
             avatar: "./img/avatar_5.jpg",
             visible: true,
-            clickButton: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -117,7 +117,6 @@ createApp({
             name: 'Claudia',
             avatar: "./img/avatar_5.jpg",
             visible: true,
-            clickButton: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -140,7 +139,6 @@ createApp({
             name: 'Federico',
             avatar: "./img/avatar_7.jpg",
             visible: true,
-            clickButton: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -158,7 +156,6 @@ createApp({
             name: 'Davide',
             avatar: "./img/avatar_8.jpg",
             visible: true,
-            clickButton: false,
             messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -184,13 +181,14 @@ createApp({
       cambioChat(chatCliccata) {
         
         this.chatSelezionata = chatCliccata;
+
         
       },
       sendText(element, index) {
-          console.log(element);
+          console.log(element.messages);
           element.push(
             {
-              date: '10/01/2020 15:51:00',
+              date: DateTime.now().setLocale("it").toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
               message: this.creazioneMessaggio,
               status: 'sent'
             }
@@ -201,7 +199,7 @@ createApp({
           {
             element.push(
               {
-                date: '10/01/2020 15:51:00',
+                date: DateTime.now().setLocale("it").toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
                 message: "ok",
                 status: 'received'
               }
@@ -223,10 +221,26 @@ createApp({
           return element.visible;
         });
       },
-      addRemove() {
-        
-      }
-      
+      addRemove(contact, element,index1, index) {
+
+        console.log(contact);
+        console.log(element);
+        console.log(index1);
+        console.log(index);
+        this.contacts.forEach((element) => {
+          
+        });
+      },
+      getOnlyTime(strDateTime) {
+        const dateAndTime = strDateTime.split(" ");
+
+        console.log(dateAndTime);
+
+        const hourMinuteSecond = dateAndTime[1].split(":");
+
+        return ` ${hourMinuteSecond[0]}:${hourMinuteSecond[1]} `
+         
+      },  
       }
   },
   ).mount('#app')
