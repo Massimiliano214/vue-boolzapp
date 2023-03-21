@@ -74,7 +74,7 @@
                             </div>
                             <div class="chatting">
                                 <h4 class="profileName">{{contact.name}}</h4>
-                                <span class="lastAccess">Ultimo accesso oggi alle 12:00</span>
+                                <span class="lastAccess">Ultimo accesso {{contact.messages[contact.messages.length - 1].date}}</span>
                             </div>
                             
                             <div class="icons">
@@ -89,13 +89,13 @@
                     <div class="chatSection">
                         <div class="chatMargin" >
                             <div v-for="(contact, index1) in contacts" class="containerMessages">
-                                <div v-for="(element, index) in contact.messages" class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'" v-if="(index1 == chatSelezionata)" @click="addRemove(contact, element,index1, index) ">
+                                <div v-for="(element, index) in contact.messages" class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'" v-if="((index1 == chatSelezionata) && !delateSection)" @click="addRemove(contact, element,index1, index)">
                                     {{element.message}}
                                     <i class="alingText fa-solid fa-chevron-down"></i>
 
                                     <div class="window d-none">
                                         <span>Message info</span> </br>
-                                        <span>Deleate message</span>
+                                        <span @click="deleateMsg(element, index)">Deleate message</span>
                                     </div>
                                     
                                     <span class="messageTime">{{getOnlyTime(element.date)}}</span>
