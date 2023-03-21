@@ -228,7 +228,7 @@ createApp({
         
       },
       sendText(element, index) {
-
+        
           element.push(
             {
               date: DateTime.now().setLocale("it").toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
@@ -264,7 +264,13 @@ createApp({
         });
       },
       addRemove(element) {
-        element.showWindow = true;
+        if(element.showWindow == true) {
+          element.showWindow = false;
+        } else {
+          element.showWindow = true;
+        }
+        
+        
       },
       getOnlyTime(strDateTime) {
         const dateAndTime = strDateTime.split(" ");
