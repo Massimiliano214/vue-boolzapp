@@ -55,9 +55,8 @@
                                 
                                 <div class="stats">
                                     <h4 class="chatterName">{{contacts[index].name}}</h4>
-                                    <span class="lastMessage" v-for="(element, index2) in contact.messages">
-                                        <span v-if="index2 == element.message.length -1" >{{element.message}}</span></span>
-                                    <span class="hoursMessage">12:00</span>
+                                    <span class="lastMessage" >{{contact.messages[contact.messages.length - 1].message}}</span>
+                                    <span class="hoursMessage">{{contact.messages[contact.messages.length - 1].date}}</span>
                                 </div>
                             </div>
                             
