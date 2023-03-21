@@ -297,10 +297,6 @@ main {
     display: none;
 }
 
-.d-none {
-    display: none;
-}
-
 .window {
     position: absolute;
     right: 10px;
@@ -309,17 +305,14 @@ main {
     justify-content: left;
     flex-wrap: wrap;
     flex-direction: column;
+    z-index: 4;
+    display: flex;
     
 }
 
 .messageClassic:hover .alingText {
     display: block;
     z-index: 3;
-}
-
-.messageClassic:hover .window {
-    z-index: 4;
-    display: flex;
 }
 
 .window {

@@ -21,18 +21,21 @@ createApp({
             date: '10/01/2020 15:30:55',
             message: 'Hai portato a spasso il cane?',
             deleateSection: false,
+            showWindow: false,
             status: 'sent'
             },
             {
             date: '10/01/2020 15:50:00',
             message: 'Ricordati di stendere i panni',
             deleateSection: false,
+            showWindow: false,
             status: 'sent'
             },
             {
             date: '10/01/2020 16:15:22',
             message: 'Tutto fatto!',
             deleateSection: false,
+            showWindow: false,
             status: 'received'
             }
             ],
@@ -41,24 +44,28 @@ createApp({
             name: 'Fabio',
             avatar: "./img/avatar_2.jpg",
             deleateSection: false,
+            showWindow: false,
             visible: true,
             messages: [
             {
             date: '20/03/2020 16:30:00',
             message: 'Ciao come stai?',
             deleateSection: false,
+            showWindow: false,
             status: 'sent'
             },
             {
             date: '20/03/2020 16:30:55',
             message: 'Bene grazie! Stasera ci vediamo?',
             deleateSection: false,
+            showWindow: false,
             status: 'received'
             },
             {
             date: '20/03/2020 16:35:00',
             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
             deleateSection: false,
+            showWindow: false,
             status: 'sent'
             }
             ],
@@ -72,18 +79,21 @@ createApp({
             date: '28/03/2020 10:10:40',
             message: 'La Marianna va in campagna',
             deleateSection: false,
+            showWindow: false,
             status: 'received'
             },
             {
             date: '28/03/2020 10:20:10',
             message: 'Sicuro di non aver sbagliato chat?',
             deleateSection: false,
+            showWindow: false,
             status: 'sent'
             },
             {
             date: '28/03/2020 16:15:22',
             message: 'Ah scusa!',
             deleateSection: false,
+            showWindow: false,
             status: 'received'
             }
             ],
@@ -97,12 +107,14 @@ createApp({
             date: '10/01/2020 15:30:55',
             message: 'Lo sai che ha aperto una nuova pizzeria?',
             deleateSection: false,
+            showWindow: false,
             status: 'sent'
             },
             {
             date: '10/01/2020 15:50:00',
             message: 'Si, ma preferirei andare al cinema',
             deleateSection: false,
+            showWindow: false,
             status: 'received'
             }
             ],
@@ -116,12 +128,14 @@ createApp({
             date: '10/01/2020 15:30:55',
             message: 'Ricordati di chiamare la nonna',
             deleateSection: false,
+            showWindow: false,
             status: 'sent'
             },
             {
             date: '10/01/2020 15:50:00',
             message: 'Va bene, stasera la sento',
             deleateSection: false,
+            showWindow: false,
             status: 'received'
             }
             ],
@@ -135,18 +149,21 @@ createApp({
             date: '10/01/2020 15:30:55',
             message: 'Ciao Claudia, hai novità?',
             deleateSection: false,
+            showWindow: false,
             status: 'sent'
             },
             {
             date: '10/01/2020 15:50:00',
             message: 'Non ancora',
             deleateSection: false,
+            showWindow: false,
             status: 'received'
             },
             {
             date: '10/01/2020 15:51:00',
             message: 'Nessuna nuova, buona nuova',
             deleateSection: false,
+            showWindow: false,
             status: 'sent'
             }
             ],
@@ -160,12 +177,14 @@ createApp({
             date: '10/01/2020 15:30:55',
             message: 'Fai gli auguri a Martina che è il suo compleanno!',
             deleateSection: false,
+            showWindow: false,
             status: 'sent'
             },
             {
             date: '10/01/2020 15:50:00',
             message: 'Grazie per avermelo ricordato, le scrivo subito!',
             deleateSection: false,
+            showWindow: false,
             status: 'received'
             }
             ],
@@ -179,18 +198,21 @@ createApp({
             date: '10/01/2020 15:30:55',
             message: 'Ciao, andiamo a mangiare la pizza stasera?',
             deleateSection: false,
+            showWindow: false,
             status: 'received'
             },
             {
             date: '10/01/2020 15:50:00',
             message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
             deleateSection: false,
+            showWindow: false,
             status: 'sent'
             },
             {
             date: '10/01/2020 15:51:00',
             message: 'OK!!',
             deleateSection: false,
+            showWindow: false,
             status: 'received'
             }
             ],
@@ -241,15 +263,8 @@ createApp({
           return element.visible;
         });
       },
-      addRemove(contact, element,index1, index) {
-
-        console.log(contact);
-        console.log(element);
-        console.log(index1);
-        console.log(index);
-        this.contacts.forEach((element) => {
-          
-        });
+      addRemove(element) {
+        element.showWindow = true;
       },
       getOnlyTime(strDateTime) {
         const dateAndTime = strDateTime.split(" ");

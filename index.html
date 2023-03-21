@@ -89,12 +89,12 @@
                     <div class="chatSection">
                         <div class="chatMargin" >
                             <div v-for="(contact, index1) in contacts"  >
-                                <div v-for="(element, index) in contact.messages"  class="containerMessages"  @click="addRemove(contact, element,index1, index)">
-                                    <div v-if="((index1 == chatSelezionata) && !element.deleateSection)"  class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'">
+                                <div v-for="(element, index) in contact.messages"  class="containerMessages">
+                                    <div v-if="((index1 == chatSelezionata) && !element.deleateSection)"  class="messageClassic" :class="(element.status == 'sent')?'ownMessage':'otherMessage'" @click="addRemove(element)">
                                         {{element.message}}
                                     <i class="alingText fa-solid fa-chevron-down"></i>
 
-                                    <div class="window d-none">
+                                    <div v-if="element.showWindow" class="window">
                                         <span>Message info</span> </br>
                                         <span @click="deleateMsg(element, index)">Deleate message</span>
                                     </div>
