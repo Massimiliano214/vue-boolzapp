@@ -4,6 +4,7 @@ const DateTime = luxon.DateTime;
 createApp({
     data() {
       return {
+        placeHolderMessage: "Scrivi un messaggio",
         chatSelezionata: 0,
         creazioneMessaggio: "",
         ricercaUtente: "",
@@ -228,7 +229,7 @@ createApp({
         
       },
       sendText(element, index, placeholder) {
-        if (this.creazioneMessaggio != "") {
+        if (this.creazioneMessaggio.trim() != "") {
           element.push(
             {
               date: DateTime.now().setLocale("it").toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
@@ -249,9 +250,9 @@ createApp({
             )
           }, 1000)
         } else {
-          this.creazioneMessaggio = "Scrivi almeno un carattere";
+          this.placeHolderMessage = "Scrivi almeno un carattere";
           setTimeout(() => {
-            this.creazioneMessaggio = "";
+            this.placeHolderMessage = "Scrivi un messaggio";
           }, 3000)
         }
           
