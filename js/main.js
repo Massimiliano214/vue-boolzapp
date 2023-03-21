@@ -260,9 +260,9 @@ createApp({
          
       },
       deleateMsg(element, index) {
-        element[index].delateSection = true;
-        console.log(element[index].delateSection);
-        return element[index].delateSection;
+        element.delateSection = true;
+        console.log(element.delateSection);
+        return element.delateSection;
       },
       }
   },
