@@ -249,7 +249,10 @@ createApp({
             )
           }, 1000)
         } else {
-          placeholder= "Scrivi almeno un carattere";
+          this.creazioneMessaggio = "Scrivi almeno un carattere";
+          setTimeout(() => {
+            this.creazioneMessaggio = "";
+          }, 3000)
         }
           
       },
